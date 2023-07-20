@@ -17,6 +17,10 @@ expressServerInstance.get("/", (requestObject, responseObject) => {
   console.log(requestObject); //gives information about request
   console.log(responseObject); //gives information about response
 });
+
+expressServerInstance.get("/page", (requestObject, responseObject) => {
+  responseObject.sendFile("./page.html", { root: __dirname });
+});
 expressServerInstance.listen(3000, () => {
   console.log("server is running on port 3000");
 }); //The code snippet expressServerInstance.listen(3000);
